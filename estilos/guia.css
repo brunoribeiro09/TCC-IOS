@@ -3,22 +3,22 @@
 *{margin: 0; padding: 0;}
 
 body {
-    
+    width: 510vw;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-    overflow-y: hidden;
+    background-color: red;
 }
 
 main {
-    width: 500vw;
     display: flex;
 }
 
 .principal {
-    width: 100vw;
-    height: 90vh;
+    width: 95vw;
+    height: 100vh;
+    margin-left: 10px;
 }
 
 .guia {
@@ -73,6 +73,43 @@ a { color: white;   }   .fonte{     font-size: 10px;    }
     margin: 30px 5px 0px 0px;
 }
 
+.bob {
+    position: absolute;
+    width: 200px; height: 200px;
+    left: 50%;
+    top: -200px;
+    animation: intro 35s 1 linear forwards;
+}
+
+@keyframes intro {
+    0%{
+        top: 200px;
+        left: 50%;
+    }
+    20%{
+        top: 200px;
+        left: 100%;
+    }
+    40%{
+        top: 200px;
+        left: 200%;
+    }
+
+    60%{
+        top: 200px;
+        left: 300%;
+    }
+
+    80%{
+        top: 200px;
+        left: 400%;
+    }
+
+    100%{
+        top: 200px;
+        left: 490%;
+    }
+}
 /*INICIO DO CARDÁPIO - PÁGINA 02*/
 
 .cardapio {
@@ -82,6 +119,8 @@ a { color: white;   }   .fonte{     font-size: 10px;    }
     margin-top: 100px;
     display: flex;
     background-image: url('../imagens/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .itens {
@@ -117,11 +156,13 @@ a { color: white;   }   .fonte{     font-size: 10px;    }
     font-size: 20px;
 }
 
+
+
 /*FIM DO CARDÁPIO - PÁGINA 02*/
 /*INICIO DO ATENDIMENTO - PÁGINA 03*/
 
 .atendimento {
-    width: 75vw;
+    width: 90vw;
     height: 70vh;
     border: 2px solid black;
     margin-top: 100px;
@@ -175,7 +216,7 @@ a { color: white;   }   .fonte{     font-size: 10px;    }
 /*INICIO DE EVENTOS - PÁGINA 04*/
 
 .eventos {
-    width: 75vw;
+    width: 90vw;
     height: 70vh;
     border: 2px solid black;
     margin-top: 100px;
@@ -208,7 +249,7 @@ a { color: white;   }   .fonte{     font-size: 10px;    }
 
 .cartaz {
     border: 2px solid black;
-    width: 75vw;
+    width: 90vw;
     height: 70vh;
     margin-top: 100px;
 }
@@ -271,69 +312,29 @@ a { color: white;   }   .fonte{     font-size: 10px;    }
     position: relative;
 }
 
-#start{
-    animation: start 15s ease-out;
+.pedido {
+    background-color: aqua;
+    height: 5%;
+    width: 10%;
+    position: absolute;
+    top: 43%;
+    left: 489%;
+    padding: 0.8rem;
+    border: 2px solid black;
+    border-radius: 5%;
+    text-align: center;
+    color: orangered;
+    padding: 25px;
+    font-variant: small-caps;
+    font-weight: bolder;
 }
 
-@keyframes start {
-
-0%{
-    top: 0%;
-    left: 50%;
+.pedido > button {
+    margin: 5px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 5%;
 }
-
-5%{
-    top: 50%;
-    left: 50%;
-}
-
-10%{
-    left: 100%;
-    top: 100%;
-}
-
-15%{
-    top: 50%;
-}
-
-20%{
-    top: 20%;
-    left: 100%;
-}
-
-25%{
-    top: 20%;
-    left: 120%;
-}
-
-70%{
-    top: 75%;
-    left: 140%;
-}
-
-85%{
-    left: 160%;
-    top: 75%;
-}
-
-90%{
-    top: 75%;
-    left: 180%;
-}
-
-95%{
-    left: 200%;
-    top: 75%;
-}
-
-120% {
-    top: 100%;
-    left: 220%;
-}
-
-140%{
-left: 500%;
-}
-}
-
 

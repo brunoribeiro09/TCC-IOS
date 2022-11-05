@@ -7,29 +7,22 @@
     <title>Hover Burguer - Inicio</title>
     <link rel="stylesheet" href="estilos/guia.css">
     <style>
-	canvas {
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		position: absolute;
-	}
 </style>
 </head>
 <body>
-    
     <main>
-        <div class="principal"> 
+        <div class="principal">
             <div class="menu">
                 GUIA    
             </div>           
             <div class="guia">
                 <div class="left">
-                    <div class=""><a href="guia.html">HOME</a></div>
-                    <div class=""><a href="cardapio.html">CARDÁPIO</a></div>
-                    <div class=""><a href="atendimento.html">AGENDAMENTO</a></div>
-                    <div class=""><a href="eventos.html">EVENTOS</a></div>
+                    <div><a href="guia.html">HOME</a></div>
+                    <div><a href="#pagina1">CARDÁPIO</a></div>
+                    <div><a href="#pagina2">AGENDAMENTO</a></div>
+                    <div><a href="#pagina3">EVENTOS</a></div>
                 </div>
-                
+                <img src="imagens/bob-animado.gif" alt="" class="bob">
                 <div class="right">
                     <div class="">LOCAIS</div>
                     <div class="">CONTATOS</div>
@@ -39,7 +32,7 @@
             </div>
         </div>
 
-        <div class="principal">
+        <div class="principal" id="pagina1">
             <div class="cardapio">
                 <div class="">CARDÁPIO</div>
                 <div class="men">MENU</div>
@@ -48,8 +41,8 @@
             </div>
         </div>
 
-        <div class="principal">
-            <div class="atendimento">
+        <div class="principal" id="pagina2">
+            <div class="atendimento" >
                 <div>ATENDIMENTO</div>
                 <div class="center">
                     <div class="">LOGO</div>
@@ -65,7 +58,7 @@
             </div>
         </div>
 
-        <div class="principal">
+        <div class="principal" id="pagina3">
             <div class="eventos">
                 <div>EVENTOS</div>
                 <div class="promocional">CARTAZ DE EVENTO PROMOCIONAL</div>  <br><br>
@@ -73,199 +66,51 @@
             </div>
         </div>
 
-        <div class="cartaz">
-            <div class="nav">
-                <div class="hom">HOME</div>
-                <div class="meu">MENU</div>
-            </div>
-            <div class="logo">LOGO</div>
-            <div class="podio">
-                <div class="podio1">HAMBURGUER 1</div>
-                <div class="podio2">HAMBURGUER 2</div>
-                <div class="podio3">HAMBURGUER 3</div>        
-            </div>
-            <div class="banner">CARTAZ DE EVENTO (PROMOCIONAL)</div>
-        </div>
-        <canvas width="1000%" height="600%" class="personagem" id="start"> </canvas>
+        <div class="principal"  id="pagina4">
+			<div class="cartaz">
+				<div class="nav">
+					<div class="hom">HOME</div>
+					<div class="meu">MENU</div>
+				</div>
+				<div class="logo">LOGO</div>
+				<div class="podio">
+					<div class="podio1">HAMBURGUER 1</div>
+					<div class="podio2">HAMBURGUER 2</div>
+					<div class="podio3">HAMBURGUER 3</div>
+				</div>
+				<div class="banner">CARTAZ DE EVENTO (PROMOCIONAL)</div>
+			</div>
+		</div>
+		<div class="pedido">
+			<p>PARA PREPARAR O SEU PEDIDO</p>	
+			<button onclick="mudarPagina()">CLIQUE AQUI</button>
+		</div>
+
+
     </main>
 <script>
-(function(){
-	var cnv = document.querySelector('canvas');
-	var ctx = cnv.getContext('2d');
-	
-	//recursos
-	var background = new Image();
-	background.src = "";
-	
-	var monster = new Image();
-	monster.src = "imagens/bob-animado.gif";
-	
-	//objetos
-	var sprites = [];
-	
-	var gameWorld = {
-		img: background,
-		x: 0,
-		y: 0,
-		width: 1000,
-		height: 600
-	};
-	sprites.push(gameWorld);
-	
-	var char = {
-		img: monster,
-		x: 0,
-		y: 0,
-		width: 256  ,
-		height: 256
-	};
-	sprites.push(char);
-	//centralizar O char
-	char.x = (gameWorld.width - char.width)/2;
-	char.y = (gameWorld.height - char.height)/2;
-	
-	var cam = {
-		x: 0,
-		y: 0,
-		width: cnv.width,
-		height: cnv.height,
-		leftEdge: function(){
-			return this.x + (this.width * 0.25);
-		},
-		rightEdge: function(){
-			return this.x + (this.width * 0.25);
-		},
-		topEdge: function(){
-			return this.y + (this.height * 0.25);
-		},
-		bottomEdge: function(){
-			return this.y + (this.height * 0.75);
-		}
-	};
-	
-	//centralizar a câmera
-	cam.x = (gameWorld.width - cam.width)/2;
-	cam.y = (gameWorld.height - cam.height)/2;
-	
-	//mover o char
-	var mvLeft = mvRight = mvUp = mvDown = false;
-	window.addEventListener('keydown',function(e){
-		var key = e.keyCode;
-		switch(key){
-			case 37:
-				mvLeft = true;
-				break;
-			case 39:
-				mvRight = true;
-				break;
-			case 38:
-				mvUp = true;
-				break;
-			case 40:
-				mvDown = true;
-				break;
-		}
-	},false);
-	
-	window.addEventListener('keyup',function(e){
-		var key = e.keyCode;
-		switch(key){
-			case 37:
-				mvLeft = false;
-				break;
-			case 39:
-				mvRight = false;
-				break;
-			case 38:
-				mvUp = false;
-				break;
-			case 40:
-				mvDown = false;
-				break;
-		}
-	},false);
-	
-	function loop(){
-		window.requestAnimationFrame(loop,cnv);
-		update();
-		render();
-	}
-	
-	function update(){
-		if(mvLeft && !mvRight){
-			char.x -= 2;
-		}
-		if(mvRight && !mvLeft){
-			char.x += 2;
-		}
-		if(mvUp && !mvDown){
-			char.y -= 2;
-		}
-		if(mvDown && !mvUp){
-			char.y += 2;
-		}
-		
-		//limite do char
-		if(char.x < 0){
-			char.x = 0;
-		}
-		if(char.x + char.width > gameWorld.width){
-			char.x = gameWorld.width - char.width;
-		}
-		if(char.y < 0){
-			char.y = 0;
-		}
-		if(char.y + char.height > gameWorld.height){
-			char.y = gameWorld.height - char.height;
-		}
-		
-		//atualizar a posição da câmera em função do char
-		if(char.x < cam.leftEdge()){
-			cam.x = char.x - (cam.width * 0.75);
-		}
-		if(char.x + char.width > cam.rightEdge()){
-			cam.x = char.x - (cam.width * 0.25);
-		}
-		if(char.y < cam.topEdge()){
-			cam.y = char.y - (cam.height * 0.25);
-		}
-		if(char.y + char.height > cam.bottomEdge()){
-			cam.y = char.y - (cam.height * 0.75);
-		}
-		
-		//limite da câmera
-		if(cam.x < 0){
-			cam.x = 0;
-		}
-		if(cam.x + cam.width > gameWorld.width){
-			cam.x = gameWorld.width - cam.width;
-		}
-		if(cam.y < 0){
-			cam.y = 0;
-		}
-		if(cam.y + cam.height > gameWorld.height){
-			cam.y = gameWorld.height - cam.height;
-		}
-	}
-	
-	function render(){
-		ctx.save();
-		ctx.translate(-cam.x,-cam.y);
-		for(var i in sprites){
-			var spr = sprites[i];
-			ctx.drawImage(spr.img,0,0,spr.width,spr.height,spr.x,spr.y,spr.width,spr.height);
-		}
-		ctx.restore();
-		ctx.font = "bold 25px Arial";
-		ctx.fillText("SCORE: 0",10,30);
-	}
+setTimeout(function(){
+	window.location.href = "#pagina1";
+}, 6800)
 
-	loop();
-}());
+setTimeout(function(){
+	window.location.href = "#pagina2";
+}, 13500)
 
-const bob = [scrollX, scrollY];
+setTimeout(function(){
+	window.location.href = "#pagina3";
+}, 20100)
 
-console.log(bob.indexOf(scrollX));
+setTimeout(function(){
+	window.location.href = "#pagina4";
+}, 26800)
+
+function mudarPagina(){
+	window.location.href = "formulario.html";
+}
+
 </script>
+
+
 </body>
 </html>
