@@ -9,10 +9,14 @@
         body {
             background-color: red;
         }
+        
+        .anima1{
+            animation: paocima 2s 1 linear forwards;
+        }
 
         .hamburguer{
             width: 700px;
-            height: 700px;
+            height: 500px;
             border: 1px solid;
         }
 
@@ -20,9 +24,8 @@
             position: absolute;
             left: 5%;
             top: -10%;
-            animation: paocima 2s 1 linear forwards;
         }
-
+        
         .salada{
             position: absolute;
             left: 5%;
@@ -115,10 +118,10 @@
     </style>
 </head>
 <body>
-    <button>Clique aqui</button>
+    <button onclick="anima()" >Clique aqui</button>
 
     <div class="hamburguer">
-        <div class="paocima">
+        <div class="paocima " >
             <img src="paodecima.png" alt="Pão"> PARTE DE CIMA DO HAMBURGUER
         </div>
 
@@ -134,5 +137,34 @@
             <img src="paodebaixo.png" alt="Pão">    PARTE DE BAIXO DO HAMBURGUER
         </div>
     </div>
+    
+    <form action="">
+           
+        <label for="pao">PÃO DO HAMBURGUER</label>
+        <input type="radio" name="" id="animar"  > <br>
+        
+        <label for="salada">SALADA</label>
+        <input type="radio" name="" id="salada"> <br>
+
+        <label for="carne">CARNE</label>
+        <input type="radio" name="" id="carne"> <br>
+        
+    </form>
+
+    <script>
+        /* const botaoAnimar = document.getElementById("animar");
+        const caixa = document.querySelector(".paocima");
+
+        botaoAnimar.addEventListener("click", ()=> {    caixa.style.animation = "";
+        setTimeout(() => caixa.style.animation = "paocima 1s linear", 5);
+        }); */
+
+
+
+        function anima(){
+            var a = document.querySelector(".paocima");
+            a.setAttribute('class', 'anima1');
+        }
+    </script>
 </body>
 </html>
