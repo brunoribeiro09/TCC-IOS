@@ -1,37 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+    
         
-        .caixa {
-        background-color:lightGreen;
-        width:100px;
-        height:100px;
-        }
-        @keyframes deslizar{
-        0%   { margin-left: 0px; }
-        50%  { margin-left: 200px; }
-        100% { margin-left: 0px; }
+        @keyframes paocima{
+            0%{margin-top: -10%;  }
+            100%{margin-top: 5%;}
+            100%{margin-top: 10%;}
         }
 
+        #animar {
+            left: 50%;
+            top: 50%;
+            position: absolute;
+        }
+
+        @keyframes paobaixo {
+            0%{
+                right: 100%;
+                left: 5%;
+            }
+
+            50%{
+                right: 65%;
+                left: 5%;
+            }
+
+            100%{
+                right: 50%;
+                left: 5%;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="caixa"></div>
+    <div class="caixa"> <img src="paodecima.png" alt=""></div>
     <button id="animar">Animar</button>
+
+
 
 <script>
     const botaoAnimar = document.getElementById("animar");
     const caixa = document.querySelector(".caixa");
 
     botaoAnimar.addEventListener("click", ()=> {    caixa.style.animation = "";
-    setTimeout(() => caixa.style.animation = "deslizar 1s linear", 5);
+    setTimeout(() => caixa.style.animation = "paocima 1s linear", 5);
     });
+
+
+
+   /*  const caixa1 = document.querySelector(".caixa1");
+
+    botaoAnimar.addEventListener("click", ()=> {    caixa1.style.animation = "";
+    setTimeout(() => caixa1.style.animation = "paobaixo 3s linear", 5);
+    }); */
 
 </script>
     

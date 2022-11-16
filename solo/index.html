@@ -10,59 +10,148 @@
             background-color: red;
         }
         
-        .anima1{
-            animation: paocima 2s 1 linear forwards;
-        }
-
         .hamburguer{
             width: 700px;
-            height: 500px;
+            height: 750px;
             border: 1px solid;
+            position: absolute;
+            left: 60%;
         }
 
         .paocima{
             position: absolute;
             left: 5%;
-            top: -10%;
+            top: 10%;
+            display: none;   
         }
-        
+
         .salada{
             position: absolute;
-            left: 5%;
-            top: -35%;
-            animation: salada 2s 1 linear forwards;
-            animation-delay: 2s;
+            left: 6%;
+            top: 18%;
+            display: none;
         }
 
         .carne{
             position: absolute;
             left: 5%;
-            top: -15%;
-            animation: carne 2s 1 linear forwards;
-            animation-delay: 4s;
+            top: 43%;
+            display: none;
+        }
+
+        .calabresa{
+            position: absolute;
+            top: 10%;
+            left: -9%;        
+            display: none;
+            width: 30px;
         }
 
         .paobaixo{
             position: absolute;
             left: 5%;
-            top: -15%;
-            animation: paobaixo 2s 1 linear forwards;
-            animation-delay: 6s;
+            top: 50%;
+            display: none;
         }
 
-        @keyframes paocima {
+        form {
+            margin-top: 100px;
+            left: 45%;
+            position: absolute;
+            border: 1px solid black;
+            background-color: grey;
+            padding: 1rem;
+        }
+
+        .cocap {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 30%;
+            top: 20%;
+            display: none;
+        }
+
+        .cocag {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            left: 30%;
+            top: 20%;
+            display: none;
+        }
+
+        .guaranap {
+          
+            position: absolute;
+            left: 30%;
+            top: 20%;
+            display: none;
+        }
+
+        .guaranag {
+          
+            position: absolute;
+            left: 30%;
+            top: 20%;
+            display: none;
+        }
+
+        .finish {
+            background-color: grey;
+            color: white;
+            padding: 0.5rem;
+            border: 1px solid black;
+        }
+
+        .transformar {
+            top: 70%;
+            left: 65%;
+            position: absolute;
+            display: none;
+            background-color: grey;
+            color: white;
+            padding: 0.5rem;
+            border: 1px solid black;
+        }
+
+        .cheese {
+            top: 20%;
+            left: -20%;
+            position: absolute;
+            width: 200px;
+            -webkit-animation:spin 2s linear;
+            -moz-animation:spin 2s linear;
+            animation:spin 2s linear;
+            display: none;
+           
+            }
+            @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+            @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+            @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+            
+        }
+
+        .cheese > img {
+            width: 750px;
+            height: 450px;
+            position: absolute;
+        }
+        
+
+        
+        @keyframes paocima{
             0%{
-                top: -10%;
+                top: -50%;  
             }
 
-            100%{
+            50%{
                 top: 5%;
             }
 
             100%{
                 top: 10%;
             }
-
         }
 
         @keyframes salada {
@@ -99,6 +188,23 @@
             }
         }
 
+        @keyframes calabresa {
+            0%{
+                top: 100%;
+                left: -9%; 
+            }
+
+            50%{
+                top: 65%;
+                left: -9%; 
+            }
+
+            100%{
+                top: 10%;
+                left: -9%; 
+            }
+        }
+
         @keyframes paobaixo {
             0%{
                 top: 100%;
@@ -115,56 +221,360 @@
                 left: 5%;
             }
         }
+
+        @keyframes cocap{
+            0%{
+                top: -30%;
+            }
+
+            50%{
+                top: 0%;
+            }
+
+            100%{
+                top: 20%;
+            }
+        }
+
+        @keyframes cocag {
+            0%{
+                top: -30%;
+            }
+
+            50%{
+                top: 0%;
+            }
+
+            100%{
+                top: 20%;
+            }
+        }
+
+        @keyframes guaranap {
+            0%{
+                top: -30%;
+            }
+
+            50%{
+                top: 0%;
+            }
+
+            100%{
+                top: 20%;
+            }
+        }
+
+        @keyframes guaranag {
+            0%{
+                top: -30%;
+            }
+
+            50%{
+                top: 0%;
+            }
+
+            100%{
+                top: 20%;
+            }
+        }
     </style>
 </head>
 <body>
-    <button onclick="anima()" >Clique aqui</button>
+    <!--<button id="animar" onclick="exibir()">Clique aqui</button>-->
 
-    <div class="hamburguer">
-        <div class="paocima " >
-            <img src="paodecima.png" alt="Pão"> PARTE DE CIMA DO HAMBURGUER
-        </div>
-
-        <div class="salada">
-            <img src="salada.png" alt="Salada"> SALADA 
-        </div>
-        
-        <div class="carne">
-            <img src="carne.png" alt="Carne">   CARNE DO HAMBURGUER
+    <div class="hamburguer" id="home">
+    
+        <div class="paocima">
+            <img src="imagens/paodecima.png" alt="Pão" > PARTE DE CIMA DO HAMBURGUER
         </div>
 
         <div class="paobaixo">
-            <img src="paodebaixo.png" alt="Pão">    PARTE DE BAIXO DO HAMBURGUER
+            <img src="imagens/paodebaixo.png" alt="Pão">    PARTE DE BAIXO DO HAMBURGUER
+        </div>
+
+        <div class="salada">
+            <img src="imagens/salada.png" alt="Salada"> SALADA 
+        </div>
+        
+        <div class="carne">
+            <img src="imagens/carne.png" alt="Carne">   CARNE DO HAMBURGUER
+        </div>
+
+        <div class="cocap">
+            <img src="imagens/cocapq.png" alt="Coca Cola Pequena 350 ML" width="180px">
+        </div>
+
+        <div class="cocag">
+            <img src="imagens/cocagrande.png" alt="Coca Cola Pequena 1 L" width="180px">
+        </div>
+
+        <div class="guaranap">
+            <img src="imagens/guaranapq.png" alt="Guarana Pequena" width="180px">
+        </div>
+        
+        <div class="guaranag">
+            <img src="imagens/guaranagrande.png" alt="Guarana de 1L" width="100px">
+        </div>
+
+        <div class="calabresa">
+            <img src="imagens/calabresa.png" alt="Calabresa" width="420px">
+        </div>
+
+        <div class="cheese">
+            <img src="imagens/cheesse.png" alt="Cheesse Burguer">
         </div>
     </div>
     
-    <form action="">
-           
-        <label for="pao">PÃO DO HAMBURGUER</label>
-        <input type="radio" name="" id="animar"  > <br>
-        
-        <label for="salada">SALADA</label>
-        <input type="radio" name="" id="salada"> <br>
+    <form>
+        <h1>CÁRDAPIO</h1>
+        <details>   
+            <summary>TIPOS DE PÃES</summary>
+            <label for="animar">PÃO DO HAMBURGUER</label>
+            <input type="radio" name="pao" id="animar" onclick="exibir()"> 
+        </details>
+        <br>
 
-        <label for="carne">CARNE</label>
-        <input type="radio" name="" id="carne"> <br>
-        
+
+        <details>
+            <summary>BEBIDAS </summary>
+            <label for="cocap">COCA COLA - 350 ML</label>
+            <input type="radio" name="bebida" id="cocap" onclick="cocapequena()">
+
+            <br>
+
+            <label for="cocag">COCA COLA - 1 L</label>
+            <input type="radio" name="bebida" id="cocag" onclick="cocagrande()">
+
+            <br>
+
+            <label for="guaranap">GUARANA - 350 ML</label>
+            <input type="radio" name="bebida" id="guaranap" onclick="guaranapequena()">
+       
+            <br>
+
+            <label for="guaranag">GUARANA - 1 L</label>
+            <input type="radio" name="bebida" id="guaranag" onclick="guaranagrande()">
+        </details>
+       
+        <br>
+        <label for="salada">SALADA</label>
+        <input type="radio" name="pao" id="salada" onclick="saladaa()"> <br>
+
+        <details>
+            <summary>CARNES</summary>
+            <label for="carne">CARNE</label>
+            <input type="radio" name="carne" id="carne"  onclick="carnee()"> <br>
+
+            <label for="calabresa">CALABRESA</label>
+            <input type="radio" name="carne" id="calabresa"  onclick="calabresaa()">
+        </details>
+        <br>
+        <div class="result">
+            TOTAL R$ : 
+  
+        </div><br>
+        <div onclick="transformar()" class="finish">FINALIZAR PEDIDO</div>
     </form>
 
+
+    <div class="transformar" onclick="funcoes()" id="cheeser">
+        TRANSFORMAR
+    </div>
+
+    
+    
     <script>
-        /* const botaoAnimar = document.getElementById("animar");
-        const caixa = document.querySelector(".paocima");
+        const botaoAnimar = document.getElementById("animar");
+        const paocima = document.querySelector(".paocima");
+        const paobaixo = document.querySelector(".paobaixo");
 
-        botaoAnimar.addEventListener("click", ()=> {    caixa.style.animation = "";
-        setTimeout(() => caixa.style.animation = "paocima 1s linear", 5);
-        }); */
+        botaoAnimar.addEventListener("click", ()=> {    paocima.style.animation = "";
+        setTimeout(() => paocima.style.animation = "paocima 1s linear", 5);
+        });
+        
+        botaoAnimar.addEventListener("click", ()=> {    paobaixo.style.animation = "";
+        setTimeout(() => paobaixo.style.animation = "paobaixo 1s linear", 5);
+        });
 
+        function exibir(){
+            if(paocima.style.display == "none" ){
+                paocima.style.display = "block"
+            }
 
+            else {
+                paocima.style.display = "block"
+            }
+            
+            if(paobaixo.style.display == "none" ){
+                paobaixo.style.display = "block"
+            }
 
-        function anima(){
-            var a = document.querySelector(".paocima");
-            a.setAttribute('class', 'anima1');
+            else {
+                paobaixo.style.display = "block"
+            }
         }
+
+
+        const botaoSalada = document.getElementById("salada");
+        const salada = document.querySelector(".salada");
+        
+        botaoSalada.addEventListener("click", ()=> {    salada.style.animation = "";
+        setTimeout(() => salada.style.animation = "salada 1s linear", 5);
+        }); 
+
+        function saladaa(){
+            if(salada.style.display == "none"){
+                salada.style.display = "block"
+            }
+
+            else {
+                salada.style.display = "block"
+            }
+        }
+
+        const botaoCarne = document.getElementById("carne");
+        const carne = document.querySelector(".carne");
+        
+        botaoCarne.addEventListener("click", ()=> { carne.style.animation = "";
+        setTimeout(() => carne.style.animation = "carne 1s linear", 5)});
+
+        function carnee(){
+            if(carne.style.display == "none"){
+                carne.style.display = "block"
+            }
+
+            else {
+                carne.style.display = "block"
+            }
+        }
+
+        const botaoCocap = document.getElementById("cocap");
+        const cocap = document.querySelector(".cocap");
+
+        botaoCocap.addEventListener("click", ()=> { cocap.style.animation = "";
+        setTimeout(() => cocap.style.animation = "cocap 1s linear", 5)});
+
+        function cocapequena(){
+            if(cocap.style.display == "none"){
+                cocap.style.display = "block"
+            }
+
+            else {
+                cocap.style.display = "block"
+            }
+        }
+
+        const botaoCocag = document.getElementById("cocag");
+        const cocag = document.querySelector(".cocag");
+
+        botaoCocag.addEventListener("click", ()=> { cocag.style.animation = "";
+        setTimeout(() => cocag.style.animation = "cocag 1s linear", 5)});
+
+        function cocagrande(){
+            if(cocag.style.display == "none"){
+                cocag.syle.display = "block"
+            }
+
+            else {
+                cocag.style.display = "block"
+            }
+        }
+
+        const botaoGuarap = document.getElementById("guaranap");
+        const guaranap = document.querySelector(".guaranap");
+
+        botaoGuarap.addEventListener("click", ()=> { guaranap.style.animation = "";
+        setTimeout(() => guaranap.style.animation = "guaranap 1s linear", 5)});
+
+        function guaranapequena(){
+            if(guaranap.style.display == "none"){
+                guaranap.syle.display = "block"
+            }
+
+            else {
+                guaranap.style.display = "block"
+            }
+        }
+
+        const botaoGuarag = document.getElementById("guaranag");
+        const guaranag = document.querySelector(".guaranag");
+
+        botaoGuarag.addEventListener("click", ()=> { guaranag.style.animation = "";
+        setTimeout(() => guaranag.style.animation = "guaranag 1s linear", 5)});
+
+        function guaranagrande(){
+            if(guaranag.style.display == "none"){
+                guaranag.syle.display = "block"
+            }
+
+            else {
+                guaranag.style.display = "block"
+            }
+        }
+
+        const botaoCalabresa = document.getElementById("calabresa");
+        const calabresa = document.querySelector(".calabresa");
+
+        botaoCalabresa.addEventListener("click", ()=> { calabresa.style.animation = "";
+        setTimeout(()=> calabresa.style.animation = "calabresa 1s linear", 5)});
+
+        function calabresaa(){
+            if(calabresa.style.display == "none"){
+                calabresa.syle.display = "block"
+            }
+
+            else {
+                calabresa.style.display = "block"
+            }
+        } 
+
+        const transfor = document.querySelector(".transformar");
+
+        function transformar(){
+            if(transfor.style.display == "none"){
+                transfor.style.display = "block"
+            }
+
+            else {
+                transfor.style.display = "block"
+            }
+        }
+
+        var cheese = document.querySelector(".cheese");
+
+        function cheese1(){
+            if(cheese.style.display == "none"){
+                cheese.style.display = "block"
+            }
+
+            else {
+                cheese.style.display = "block"
+            }
+        }
+
+        function funcoes(){
+            acao();
+
+            cheese1();
+        }
+
+        function acao(){
+            window.document.body.style.backgroundColor = "black";
+            
+            setTimeout(function(){
+            window.document.body.style.display = "none";
+            }, 3000)
+
+            setTimeout(function(){
+	        window.location.href = "index.html";
+            }, 6000);
+        }
+
+        /* function acao2(){
+            setTimeout(function(){
+            cheese1()
+            }, 6500)
+        } */
     </script>
 </body>
 </html>
