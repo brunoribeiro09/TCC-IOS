@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        body{
+            background-color: black;
+        }
+
+        section {
+            display: flex;
+            top: 50%;
+            left: 45%;
+            position: absolute;
+        }
+
+        .um {
+            width: 25px;
+            height: 25px;
+            background-color: black;
+            border-radius: 50%;
+            animation: um 1s infinite linear forwards;
+            animation-delay: 0.15s;
+        }
+
+        .dois {
+            width: 25px;
+            height: 25px;
+            background-color: black;
+            margin: 0px 15px;
+            border-radius: 50%;
+            animation: dois 1s infinite linear forwards;
+            animation-delay: 0.3s;
+        }
+
+        .tres {
+            width: 25px;
+            height: 25px;
+            background-color: black;
+            border-radius: 50%;
+            animation: tres  1s infinite linear forwards;
+            animation-delay: 0.5s ;
+        }
+
+        @keyframes um {
+            0%{
+                background-color: white;
+            }
+            
+            100%{
+                background-color: black;
+            }
+        }
+
+        @keyframes dois {
+            0%{
+                background-color: white;
+            }
+            
+            100%{
+                background-color: black;
+            }
+        }
+
+        @keyframes tres {
+            0%{
+                background-color: white;
+            }
+            
+            100%{
+                background-color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="um"></div>
+            <div class="dois"></div>
+            <div class="tres"></div>
+        </section>
+    </main>
+</body>
+</html>
