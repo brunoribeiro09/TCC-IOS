@@ -45,6 +45,14 @@
             animation-delay: 0.5s ;
         }
 
+        p {
+            color: white;
+            top: 45%;
+            left: 44%;
+            position: absolute;
+            font-variant: small-caps;
+        }
+
         @keyframes um {
             0%{
                 background-color: white;
@@ -78,11 +86,18 @@
 </head>
 <body>
     <main>
+        <p>Por favor, aguarde...</p>
         <section>
+                <br>
             <div class="um"></div>
             <div class="dois"></div>
             <div class="tres"></div>
         </section>
     </main>
+    <script>
+        setTimeout(function(){
+	window.location.href = "../telatrincada/index.html";
+    }, 5000)
+    </script>
 </body>
 </html>

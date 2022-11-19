@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           overflow: hidden;
+           background-color: black;
+           width: 100vw;
+           height: 100vh;
+        }
+
+        .um {
+            width: 486px;
+            height: 6px;
+            background-color: black;
+            rotate: 21.6deg;
+            left: 49%;
+            top: 52%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 0.15s, 15s;
+        }
+
+        .dois {
+            width: 490px;
+            height: 5px;
+            background-color: black;
+            rotate: 41deg;
+            left: 70.35%;
+            top: 78.2%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 0.7s, 15s;
+        }
+
+        .tres {
+            width: 150px;
+            height: 5px;
+            background-color: black;
+            rotate: 25deg;
+            left: 92.5%;
+            top: 98.2%;
+            position: absolute;
+            animation: trincar  1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 1s , 15s;
+        }
+
+        /* 2º TELA */
+
+        .quatro {
+            width: 448px;
+            height: 6px;
+            background-color: black;
+            rotate: 6deg;
+            right: 50%;
+            bottom: 59%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 1.7s , 15s;
+        }
+
+        .cinco {
+            width: 486px;
+            height: 5px;
+            background-color: black;
+            rotate: 41.7deg;
+            right: 70%;
+            bottom: 78%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 2.3s, 15s;
+        }
+   
+        .seis {
+            width: 156px;
+            height: 5px;
+            background-color: black;
+            rotate: 17deg;
+            right: 91.9%;
+            bottom: 97%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 3s, 15s;
+        }
+       
+        /* 3º TELA */
+
+        .sete {
+            width: 475px;
+            height: 6px;
+            background-color: black;
+            rotate: -22.5deg;
+            right: 49.5%;
+            top: 52%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards, spin 1s linear forwards;
+            animation-delay: 7.7s, 15s, 20s;
+        }
+
+        .oito {
+            width: 486px;
+            height: 5px;
+            background-color: black;
+            rotate: -41.7deg;
+            right: 70%;
+            top: 78%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 8.3s, 15s;
+        }
+   
+        .nove {
+            width: 156px;
+            height: 5px;
+            background-color: black;
+            rotate: -17deg;
+            right: 91.9%;
+            top: 97%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 9s, 15s;
+        }
+
+        /*TELA 4*/
+
+        .dez {
+            width: 458px;
+            height: 6px;
+            background-color: black;
+            rotate: -6deg;
+            left: 49.5%;
+            bottom: 59%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 9.7s, 15s;
+        }
+
+        .onze {
+            width: 486px;
+            height: 5px;
+            background-color: black;
+            rotate: -40.5deg;
+            left: 70.41%;
+            bottom: 78%;
+            position: absolute;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 10.3s, 15s;
+        }
+
+        .doze {
+            width: 150px;
+            height: 5px;
+            background-color: black;
+            rotate: -24deg;
+            left: 92.5%;
+            bottom: 97.75%;
+            position: absolute;
+            animation: trincar  1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 11s, 15s;
+        }
+
+        /*TELA 5*/
+
+        .treze {
+            width: 200px;
+            height: 5px;
+            background-color: black;
+            left: 50%;
+            top: 65px;
+            position: absolute;
+            rotate: 45deg;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 7s, 15s;
+        }
+
+        .quatorze {
+            width: 280px;
+            height: 5px;
+            background-color: black;
+            left: 46.5%;
+            top: 233px;
+            position: absolute;
+            rotate: -45deg;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 6.3s, 15s;
+        }
+
+        .quinze {
+            width: 90px;
+            height: 5px;
+            background-color: black;
+            left: 46.79%;
+            top: 373px;
+            position: absolute;
+            rotate: 78deg;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 5.7s, 15s;
+        }
+
+        /*TELA 6*/
+
+        .dezeseis {
+            width: 200px;
+            height: 5px;
+            background-color: black;
+            right: 50%;
+            bottom: 65px;
+            position: absolute;
+            rotate: 45deg;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 5s, 15s;
+        }
+
+        .dezesete {
+            width: 280px;
+            height: 5px;
+            background-color: black;
+            right: 46.5%;
+            bottom: 233px;
+            position: absolute;
+            rotate: -45deg;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 4.3s, 15s;
+        }
+
+        .dezoito {
+            width: 220px;
+            height: 5px;
+            background-color: black;
+            right: 43.8%;
+            bottom: 438px;
+            position: absolute;
+            rotate: 82deg;
+            animation: trincar 1s linear forwards, baixo 1s linear forwards;
+            animation-delay: 3.7s, 15s;
+        }
+
+        @keyframes trincar {
+            100%{
+                background-color: white;
+            }
+        }
+
+        @keyframes baixo{
+            0%{
+                margin: 0%;
+            }
+
+            100%{
+                margin-bottom: -100%;
+            }
+        }
+
+        @-moz-keyframes spin { 
+        100% { -moz-transform: rotate(360deg); } 
+        }
+        @-webkit-keyframes spin { 
+        100% { -webkit-transform: rotate(360deg); } 
+        }
+        @keyframes spin { 
+        100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+        } 
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="um"></div>
+        <div class="dois"></div>
+        <div class="tres"></div>
+
+        <div class="quatro"></div>
+        <div class="cinco"></div>
+        <div class="seis"></div>
+        
+        <div class="sete"></div>
+        <div class="oito"></div>
+        <div class="nove"></div>
+
+        <div class="dez"></div>
+        <div class="onze"></div>
+        <div class="doze"></div>
+
+        <div class="treze"></div>
+        <div class="quatorze"></div>
+        <div class="quinze"></div>
+
+        <div class="dezeseis"></div>
+        <div class="dezesete"></div>
+        <div class="dezoito"></div>
+    </main>
+</body>
+</html>
