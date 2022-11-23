@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .um{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(124, 124, 124);
+            margin: 5px;
+            animation: um 5s linear forwards;
+            position: absolute;
+            top: -30%;
+            left: 20%;
+        }
+
+        .dois{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(124, 124, 124);
+            margin: 5px;
+        }
+
+        .tres{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(124, 124, 124);
+            margin: 5px;
+        }
+
+        @keyframes um {
+            0%{
+
+            }
+
+            50%{
+                top: 10%;
+                left: 30%;
+            }
+
+            100%{
+                top: 20%;
+                left: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="um"></div>
+        <div class="dois"></div>
+        <div class="tres"></div>
+    </main>
+    <script src="baloes.js"></script>
+</body>
+</html>
