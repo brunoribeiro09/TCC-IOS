@@ -1,8 +1,10 @@
-const el = document.querySelector(".um");
-const text = "Olá, sejam todos bem-vindos ao HOVER BURGUER";
-const interval = 100;
+//BALÃO 1
 
-function showText(el, text, interval){
+const el = document.querySelector("#texto");
+const text = "Olá, sejam todos bem-vindos ao HOVER BURGUER";
+var interval = 100;
+
+function showText(el, text){
 
     const char = text.split("").reverse();
 
@@ -16,15 +18,17 @@ function showText(el, text, interval){
 
         el.innerHTML += next;
     }, interval);
+
+    setTimeout(function (){showText2(el2, text2, interval2)}, 22000);
 }
 
-showText(el, text, interval);
+//BALÃO 2
 
-//
+showText(el, text);
 
 const el2 = document.querySelector(".dois");
 const text2 = "Meu nome é Bob, e hoje eu serei o seu GUIA";
-const interval2 = 150;
+const interval2 = 100;
 
 function showText2(el2, text2, interval2){
 
@@ -40,17 +44,17 @@ function showText2(el2, text2, interval2){
 
         el2.innerHTML += next;
     }, interval2);
+
+    setTimeout(function (){showText3(el3, text3, interval3)}, 10000);
 }
 
-showText2(el2, text2, interval2);
-
-//
+//BALÃO 3;
 
 const el3 = document.querySelector(".tres");
 const text3 = "Nosso site da hover é feito totalmente na HORIZONTAL, por isso, irei ajudá-lo durante toda a sua caminhada no site.";
-const interval3 = 0;
+const interval3 = 80;
 
-function showText2(el3, text3, interval3){
+function showText3(el3, text3){
 
     const char = text3.split("").reverse();
 
@@ -65,5 +69,3 @@ function showText2(el3, text3, interval3){
         el3.innerHTML += next;
     }, interval3);
 }
-
-showText2(el3, text3, interval3);
