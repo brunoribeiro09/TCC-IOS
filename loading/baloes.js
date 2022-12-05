@@ -19,14 +19,14 @@ function showText(el, text){
         el.innerHTML += next;
     }, interval);
 
-    setTimeout(function (){showText2(el2, text2, interval2)}, 22000);
+    setTimeout(function (){showText2(el2, text2, interval2)}, 11000);
 }
 
 //BALÃO 2
 
 showText(el, text);
 
-const el2 = document.querySelector(".dois");
+const el2 = document.querySelector(".textodois");
 const text2 = "Meu nome é Bob, e hoje eu serei o seu GUIA";
 const interval2 = 100;
 
