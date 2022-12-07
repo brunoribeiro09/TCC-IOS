@@ -25,6 +25,7 @@
             border-radius: 5%;
             color: white;
             font-size: 22px;
+            transform: translateY(-45%);
         }
         
         #texto {
@@ -35,12 +36,25 @@
             animation-delay: 8s, 8s;
         }
         
-        .carne , img {
-            text-align: center;
+        .alface {
+            
             animation: c 0.5s linear forwards;
             animation-delay: 8.5s;
-            opacity: 0%;
             width: 0;
+            border-radius: 8px;
+            background-color: #80D041;
+            height: 8px;
+            border-bottom: 3px solid #0F6D12;
+        }
+
+        .tomate {
+            width: 0;
+            animation:  0.5s linear forwards;
+            animation-delay: 12.5s;
+            border-radius: 14px;
+            background-color: #F13233;
+            height: 20px;
+            border-bottom: 5px solid #940C0E;
         }
 
         .textodois{       
@@ -96,18 +110,12 @@
 
         @keyframes b {
             100%{
-              opacity: 0%;
+              opacity: 0;
             }
         }
 
         @keyframes c {
-            0%{
-                opacity: 0%;
-                width: 0px;
-            }
-
-            100%{
-                opacity: 100%;
+            to{
                 width: 300px;
             }
         }
@@ -115,17 +123,20 @@
 </head>
 <body>
     <main>
+
         <div class="um">
             <div id="top-bun"></div>
+
                     <div id="texto"></div>
-                    <div class="carne">
-                        <img src="../montagem/imagens/carne.png" alt="Carne de Hamburguer">
+                    <div class="alface">
                     </div>
 
                     <div class="textodois"></div>
+                    <div class="tomate">
+                    </div>
 
-                    <div class="salada">
-                        <img src="../montagem/imagens/paodebaixo.png" alt="">
+                    <div id="textotres"></div>
+                    <div class="hamburguer">                     
                     </div>
                     
             <div id="top-bun-bottom"></div>

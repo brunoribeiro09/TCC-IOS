@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main > .logo {
+            text-align: end;
+        }
+
+        main > h1 {
+            text-align: center;
+            background-color: aqua;
+            color: yellow;
+        }
+
+        .a {
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            position: absolute;
+            left: 25%;
+            top: 30%;
+        }
+
+        .b {
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+        }
+
+        .c {
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            position: absolute;
+            top: 60%;
+            left: 5%;
+        }
+
+        .promo {
+            width: 350px;
+            height: 250px;
+            top: 40%;
+            left: 70%;
+            position: absolute;
+            background-color: grey;
+        }
+
+        .texto1{
+            left: 0%;
+            position: absolute;
+            width: 100px    ;
+        }
+
+        .texto2 {
+            left: 60%;
+            position: absolute;
+        }
+
+        .texto3{
+            top: 80%;
+            position: absolute;
+        }
+
+        .hamburguer {
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+            top: 35%;
+            left: 35%;
+            position: absolute;
+        }
+
+        p {
+            position: absolute;
+            top: 95%;
+            left: 45%;
+            background-color: black;
+            color: red;
+            padding: 1rem;
+            width: 90px;
+            text-align: center;
+            font-size: 22px;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="logo">
+            HOVER BURGUER
+        </div>
+        <h1>EVENTOS E PROMOÇÕES</h1>
+        <section>
+            <div class="burguer">
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+
+                <div class="promo">
+                    <div class="texto1">SUPER EVENTO PROMOCIONAL</div>
+                    <div class="texto2">2x BoardBurguer R$ 39,99</div>
+                    <div class="texto3">PROMOÇÃO POR TEMPO LIMITADO</div>
+                    
+                    <p id="contador"></p>
+
+                    <div class="hamburguer"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="contador.js"></script>
+</body>
+</html>
